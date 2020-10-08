@@ -1,0 +1,8 @@
+f = open("C:\\Users\\raulm\\OneDrive\\Desktop\\Python\\PANDA_CON_ALF\\palabra_mas_repetida.txt", "r")
+texto=(f.read()).replace(".","").replace(";","").replace(",","").replace("\n"," ").split(" ")
+texto,repeticiones=np.unique(texto,return_counts=True)
+
+datos={'texto':texto,'repeticiones':repeticiones}
+df=pd.DataFrame(data=datos)
+df=df.sort_values(by=['repeticiones'],ascending=False)
+print(df)
